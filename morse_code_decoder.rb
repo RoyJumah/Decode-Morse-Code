@@ -15,3 +15,12 @@ def decode_word(word)
   word.split.map { |morse| decode_char(morse) }.join
 end
 
+def decode(message)
+  message.split("   ").map { |word| decode_word(word) }.join(" ")
+end
+
+encoded_message = ".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ..."
+decoded_message = decode(encoded_message)
+
+puts decoded_message
+
